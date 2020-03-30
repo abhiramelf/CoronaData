@@ -41,7 +41,7 @@ public class WebScrap : MonoBehaviour
     private List<string> totalIndia = new List<string>();
     
     // Start is called before the first frame update
-    void Start()
+    public void GetIndiaData()
     {
         HtmlWeb test = new HtmlWeb();
         HtmlDocument doc = test.Load("https://www.mohfw.gov.in/");
@@ -65,119 +65,129 @@ public class WebScrap : MonoBehaviour
 
     public void StateData()
     {
-        var selected = stateDataText.Take(6).ToList();
+        foreach (string item in dataHeaderText)
+        {
+            Debug.Log(item);
+        }
+
+        //foreach (string item in stateDataText)
+        //{
+        //    Debug.Log(item);
+        //}
+
+        var selected = stateDataText.Take(5).ToList();
         selected.ForEach(i => stateDataText.Remove(i));
         andhraPradesh.AddRange(selected);
 
-        selected = stateDataText.Take(6).ToList();
+        selected = stateDataText.Take(5).ToList();
         selected.ForEach(i => stateDataText.Remove(i));
         andaman.AddRange(selected);
 
-        selected = stateDataText.Take(6).ToList();
+        selected = stateDataText.Take(5).ToList();
         selected.ForEach(i => stateDataText.Remove(i));
         bihar.AddRange(selected);
 
-        selected = stateDataText.Take(6).ToList();
+        selected = stateDataText.Take(5).ToList();
         selected.ForEach(i => stateDataText.Remove(i));
         chandigarh.AddRange(selected);
 
-        selected = stateDataText.Take(6).ToList();
+        selected = stateDataText.Take(5).ToList();
         selected.ForEach(i => stateDataText.Remove(i));
         chhattisgarh.AddRange(selected);
 
-        selected = stateDataText.Take(6).ToList();
+        selected = stateDataText.Take(5).ToList();
         selected.ForEach(i => stateDataText.Remove(i));
         delhi.AddRange(selected);
 
-        selected = stateDataText.Take(6).ToList();
+        selected = stateDataText.Take(5).ToList();
         selected.ForEach(i => stateDataText.Remove(i));
         goa.AddRange(selected);
 
-        selected = stateDataText.Take(6).ToList();
+        selected = stateDataText.Take(5).ToList();
         selected.ForEach(i => stateDataText.Remove(i));
         gujarat.AddRange(selected);
 
-        selected = stateDataText.Take(6).ToList();
+        selected = stateDataText.Take(5).ToList();
         selected.ForEach(i => stateDataText.Remove(i));
         haryana.AddRange(selected);
 
-        selected = stateDataText.Take(6).ToList();
+        selected = stateDataText.Take(5).ToList();
         selected.ForEach(i => stateDataText.Remove(i));
         himachalPradesh.AddRange(selected);
 
-        selected = stateDataText.Take(6).ToList();
+        selected = stateDataText.Take(5).ToList();
         selected.ForEach(i => stateDataText.Remove(i));
         jammuKashmir.AddRange(selected);
 
-        selected = stateDataText.Take(6).ToList();
+        selected = stateDataText.Take(5).ToList();
         selected.ForEach(i => stateDataText.Remove(i));
         karnataka.AddRange(selected);
 
-        selected = stateDataText.Take(6).ToList();
+        selected = stateDataText.Take(5).ToList();
         selected.ForEach(i => stateDataText.Remove(i));
         kerala.AddRange(selected);
 
-        selected = stateDataText.Take(6).ToList();
+        selected = stateDataText.Take(5).ToList();
         selected.ForEach(i => stateDataText.Remove(i));
         ladakh.AddRange(selected);
 
-        selected = stateDataText.Take(6).ToList();
+        selected = stateDataText.Take(5).ToList();
         selected.ForEach(i => stateDataText.Remove(i));
         madhyaPradesh.AddRange(selected);
 
-        selected = stateDataText.Take(6).ToList();
+        selected = stateDataText.Take(5).ToList();
         selected.ForEach(i => stateDataText.Remove(i));
         maharashtra.AddRange(selected);
 
-        selected = stateDataText.Take(6).ToList();
+        selected = stateDataText.Take(5).ToList();
         selected.ForEach(i => stateDataText.Remove(i));
         manipur.AddRange(selected);
 
-        selected = stateDataText.Take(6).ToList();
+        selected = stateDataText.Take(5).ToList();
         selected.ForEach(i => stateDataText.Remove(i));
         mizoram.AddRange(selected);
 
-        selected = stateDataText.Take(6).ToList();
+        selected = stateDataText.Take(5).ToList();
         selected.ForEach(i => stateDataText.Remove(i));
         odisha.AddRange(selected);
 
-        selected = stateDataText.Take(6).ToList();
+        selected = stateDataText.Take(5).ToList();
         selected.ForEach(i => stateDataText.Remove(i));
         puducherry.AddRange(selected);
 
-        selected = stateDataText.Take(6).ToList();
+        selected = stateDataText.Take(5).ToList();
         selected.ForEach(i => stateDataText.Remove(i));
         punjab.AddRange(selected);
 
-        selected = stateDataText.Take(6).ToList();
+        selected = stateDataText.Take(5).ToList();
         selected.ForEach(i => stateDataText.Remove(i));
         rajasthan.AddRange(selected);
 
-        selected = stateDataText.Take(6).ToList();
+        selected = stateDataText.Take(5).ToList();
         selected.ForEach(i => stateDataText.Remove(i));
         tamilNadu.AddRange(selected);
 
-        selected = stateDataText.Take(6).ToList();
+        selected = stateDataText.Take(5).ToList();
         selected.ForEach(i => stateDataText.Remove(i));
         telengana.AddRange(selected);
 
-        selected = stateDataText.Take(6).ToList();
+        selected = stateDataText.Take(5).ToList();
         selected.ForEach(i => stateDataText.Remove(i));
         uttarakhand.AddRange(selected);
 
-        selected = stateDataText.Take(6).ToList();
+        selected = stateDataText.Take(5).ToList();
         selected.ForEach(i => stateDataText.Remove(i));
         uttarPradesh.AddRange(selected);
 
-        selected = stateDataText.Take(6).ToList();
+        selected = stateDataText.Take(5).ToList();
         selected.ForEach(i => stateDataText.Remove(i));
         westBengal.AddRange(selected);
 
-        selected = stateDataText.Take(5).ToList();
+        selected = stateDataText.Take(4).ToList();
         selected.ForEach(i => stateDataText.Remove(i));
         totalIndia.AddRange(selected);
 
-        foreach (string item in westBengal)
+        foreach (string item in uttarakhand)
         {
             Debug.Log(item);
         }
