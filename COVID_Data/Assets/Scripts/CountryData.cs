@@ -3,8 +3,30 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Networking;
 
+[System.Serializable]
+public class CountryCase
+{
+    public string country_name;
+    public string cases;
+    public string deaths;
+    public string total_recovered;
+    public string new_deaths;
+    public string new_cases;
+    public string serious_critical;
+    public string active_cases;
+    public string total_cases_per_1m_population;
+}
+
+[System.Serializable]
+public class RootCountryClass
+{
+    public CountryCase[] countries_stat;
+}
+
 public class CountryData : MonoBehaviour
 {
+    public RootCountryClass rootCountryClass;
+
     private string uri = "https://coronavirus-monitor.p.rapidapi.com/coronavirus/cases_by_country.php";
     private string countryData;
 
@@ -26,7 +48,9 @@ public class CountryData : MonoBehaviour
             Debug.Log(req.responseCode);
             countryData = req.downloadHandler.text;
 
-            Debug.Log(countryData);
+            rootCountryClass = JsonUtility.FromJson<RootCountryClass>(countryData);
+
+            Debug.Log(rootCountryClass.countries_stat[0].country_name);
         }
         else
         {
