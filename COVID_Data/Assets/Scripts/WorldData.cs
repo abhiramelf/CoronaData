@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 using UnityEngine.Networking;
 
 [System.Serializable]
@@ -17,10 +18,14 @@ public class WorldData : MonoBehaviour
 {
     public WorldCase worldCase;
 
+    public TMP_Text worldCases;
+    public TMP_Text worldRecovered;
+    public TMP_Text worldDeaths;
+
     private string uri = "https://coronavirus-monitor.p.rapidapi.com/coronavirus/worldstat.php";
     private string worldData;
 
-    public void GetWorldData()
+    public void Start()
     {
         StartCoroutine(WorldStat());
     }
@@ -35,12 +40,13 @@ public class WorldData : MonoBehaviour
 
         if (!req.isNetworkError)
         {
-            Debug.Log(req.responseCode);
             worldData = req.downloadHandler.text;
 
             worldCase = JsonUtility.FromJson<WorldCase>(worldData);
 
-            Debug.Log(worldCase.total_cases);
+            worldCases.text = worldCase.total_cases;
+            worldRecovered.text = worldCase.total_recovered;
+            worldDeaths.text = worldCase.total_deaths;
         }
         else
         {
